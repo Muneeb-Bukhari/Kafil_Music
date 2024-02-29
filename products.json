@@ -1,0 +1,37 @@
+[
+  {
+    "id": 12,
+    "cardNumber":"20",
+    "imgSrc": "../Leonardo/Default_double_exposure_complex_art_by_Alex_Stoddard_Natalia_D_3_9ba391b9-4fba-4f65-80a8-4b4643a93454_0.jpg",
+    "title": "JAZZ3",
+    "audioSrc": "../FriendshipsOriginalMixnextedit.wav.wav",
+    "genre": "New Genre",
+    "producer": "Kafil Music",
+    "price": "From $49.00",
+    "quantity": 1,
+    "pricecart":"50",
+    "MP3":"49.00",
+    "WAV":"79.00",
+    "PREMIUM":"120.00",
+    "UNLIMITED":"149.00"
+    
+  },
+  {
+    "id": 12,
+    "cardNumber":"20",
+    "imgSrc": "../Leonardo/Leonardo_Diffusion_XL_Generate_me_a_image_for_the_beat_do_musi_3.jpg",
+    "title": "JAZZ24",
+    "audioSrc": "../FriendshipsOriginalMixnextedit.wav.wav",
+    "genre": "New Genre",
+    "producer": "Kafil Music",
+    "price": "From $49.00",
+    "quantity": 1,
+    "pricecart":"49",
+    "MP3A":"49.00",
+    "WAVA":"79.00",
+    "PREMIUMA":"120.00",
+    "UNLIMITEDA":"149.00"
+    
+     
+  }
+]

@@ -88,34 +88,40 @@
     </div>-->
 
     <!--CART END-->
-    <div class="parent-navigation">
+    <div class="parent-navigation" id="parent-navigation">
         <nav class="navigation">
-            <img src="../Screenshot 2024-02-10 at 15-43-02 Logo Maker Used By 2.3 Million Startups.png" alt="">
+            <img src="../4261053.psd" alt="">
             <p id="logo-title">Kafil Music</p>
             <ul class="link-of-top">
                 <li id="home"><a href="#parent-navigation">Home</a></li>
                 <li id="BEATS"><a href="#cards">Beats</a></li>
-                <li><a href="https://www.instagram.com/kafil_qurashie76/?utm_medium=copy_link" target="_blank"">Contact</a></li>
+                <li><a href="https://www.instagram.com/kafil_qurashie76/?utm_medium=copy_link" target="_blank"" style="
+                        color: white;">Contact</a></li>
                 <div class=" icon-container">
-                        <div class="search">
-                            <a href="https://www.instagram.com/kafil_qurashie76/?utm_medium=copy_link"
-                                target="_blank"><i class="fa-brands fa-instagram" id="social-top"></i></a>
-                            <div class="iconCart-2">
-                                <i class="fa-solid fa-bars" id="hamburger"></i>
-                            </div>
+                    <div class="search">
+                        <a href="https://www.instagram.com/kafil_qurashie76/?utm_medium=copy_link" target="_blank"><i
+                                class="fa-brands fa-instagram" id="social-top"></i></a>
+                        <div class="burger">
+                            <i class="fa-solid fa-bars" id="hamburger"></i>
                         </div>
-                        <br>
-                        <div class="iconCart-1">
-                            <span class="material-symbols-outlined" id="Carticon">
-                                shopping_cart
-                            </span>
+                    </div>
+                    <br>
+                    <div class="iconCart-1">
+                        <span class="material-symbols-outlined" id="Carticon">
+                            shopping_cart
+                        </span>
 
-                            <!-- <div class="quantity">
+                        <!-- <div class="quantity">
                             <p>0</p>
                         </div>-->
-                        </div>
+                    </div>
+
+                </div>
     </div>
     </ul>
+    <!-- <div class="iconCart-2"> -->
+    <i class="fa-solid fa-bars"></i>
+    <!-- </div> -->
     <!-- Search Popup 
             <div class="search-popup" id="search-popup">
                 <div class="search-content">
@@ -136,10 +142,10 @@
         <img src="../wp2327017-dark-music-wallpapers.jpg" alt="slidingimage">
         <h2>Kafil Music</h2>
         <h1>Welcome to</h1>
-        <p>your Lyrics,our beats.</p>
+        <p class="slogan1">your Lyrics,our beats.</p>
         <p id="slogan">MELODIES</p>
-        <button class="btn-12"><span>CHECK BEATS</span></button>
-        <button class="btn-13">CONTACT PRODUCER</button>
+        <button class="btn-12" onclick="scrollToSection()"><span>CHECK BEATS</span></button>
+        <button class="btn-13" onclick=" redirectToUrl()">CONTACT PRODUCER</button>
     </div>
     <div class="Cards-heading">
         <h1 class="cards-heading">Our Latest Beats</h1>
@@ -162,9 +168,11 @@
             <div class="price">
                 <h4 class="Price">From $49.00</h4>
             </div>
-            <button id="addToCartButton1" class="solid-btn-1"
-                onclick=" addToCartWithSelectedVariantPrice('Rock','../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg',1)">Add
-                to Cart</button>
+            <button id="addToCartButton1" class="solid-btn-1" disabled
+                onclick="if (isUpdatePriceAndSaveCalled) { addToCartWithSelectedVariantPrice('Rock','../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg',1); } else { alert('Please select a Licenses first.'); }">
+                Add to Cart
+            </button>
+
             <button class="solid-btn">Check License</button>
         </div>
         <div class="card2" id="card2">
@@ -182,14 +190,15 @@
                 <button id="UNLIMITED-2" onclick="updatePriceAndSave('UNLIMITED', 149.00, 2)">UNLIMITED</button>
             </div>
             <div class="price">
-                <h4 class="Price">From $49.00</h4>
+                <h4 class="Price" id="priceDisplay">From $49.00</h4>
             </div>
-            <button class="solid-btn-1" disabled
-                onclick="addToCartWithSelectedVariantPrice('Beauty', '../Leonardo/Default_double_exposure_complex_art_by_Alex_Stoddard_Natalia_D_3_86914419-6cbb-4f27-9255-e5255d5ba679_0.jpg', 2)">Add
-                to Cart</button>
+            <button id="addToCartButton2" class="solid-btn-1" disabled
+            onclick="if (isUpdatePriceAndSaveCalled && localStorage.getItem('selectedVariant_2')) { addToCartWithSelectedVariantPrice('Beauty', '../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg', 2); } else { alert('Please select a variant first.'); }">
+            Add to Cart
+        </button>
             <button class="solid-btn">Check License</button>
         </div>
-        <div class="card3">
+        <div class="card3" id="card3">
             <img src="../Leonardo/alchemyrefiner_alchemymagic_1_aa59f6fa-ea97-41e9-84d6-352a58ee0112_0.jpg" alt="">
             <span>KAFIL MUSIC</span>
             <audio controls>
@@ -206,7 +215,7 @@
             <div class="price">
                 <h4 class="Price">From $49.00</h4>
             </div>
-            <button class="solid-btn-1" id="addToCartButton15" disabled
+            <button class="solid-btn-1" id="addToCartButton3"
                 onclick="addToCartWithSelectedVariantPrice('Classic','../Leonardo/Default_MUSIC_INSide_the_world_of_instrumet_nature_with_dark_3.jpg',3)">Add
                 to Cart</button>
             <button class="solid-btn">Check License</button>
@@ -250,7 +259,7 @@
             <div class="price">
                 <h4 class="Price">From $49.00</h4>
             </div>
-            <button id="addToCartButton5" class="solid-btn-1"
+            <button id="addToCartButton5" class="solid-btn-1" disbaled
                 onclick="addToCartWithSelectedVariantPrice('Big Beat','../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg',5)">Add
                 to Cart</button>
             <button class="solid-btn">Check License</button>
@@ -364,7 +373,7 @@
             <div class="price">
                 <h4 class="Price">From $49.00</h4>
             </div>
-            <button id="addToCartButton10" class="solid-btn-1" disabled
+            <button id="addToCartButton10" class="solid-btn-1" 
                 onclick="addToCartWithSelectedVariantPrice('Jazz','../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg',10)">Add
                 to Cart</button>
             <button class="solid-btn">Check License</button>
@@ -387,7 +396,7 @@
             <div class="price">
                 <h4 class="Price">From $49.00</h4>
             </div>
-            <button id="addToCartButton11" class="solid-btn-1" disabled
+            <button id="addToCartButton11" class="solid-btn-1" 
                 onclick="addToCartWithSelectedVariantPrice('muneeb','../Leonardo/alchemyrefiner_alchemymagic_0_1650712e-61cc-43d6-a84b-85d42cdc0a19_0.jpg',11)">Add
                 to Cart</button>
             <button class="solid-btn">Check License</button>
@@ -429,7 +438,8 @@
             <form action="https://formspree.io/f/mjvnrrnz" class="form" id="myForm" method="post">
                 <input type="text" placeholder="Name" id="name" name="name" required />
                 <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-                <a href="../Leonardo/ThankyoupageKAfilmusic.html"><input class="login-button" type="submit" value="Submit"></a>
+                <a href="../Leonardo/ThankyoupageKAfilmusic.html"><input class="login-button" type="submit"
+                        value="Submit"></a>
             </form>
 
             <!-- <div id="confirmation" style="display: none;"> -->
@@ -450,10 +460,10 @@
 
     </div>
     <div class="fotter">
-        <h1>Let's Keep in Touch</h1> 
+        <h1>Let's Keep in Touch</h1>
         <p>Be First to know about new Beats and Music Uploaded By Kafil Music</p>
         <div class="contact-form">
-            <form action="https://formkeep.com/f/1a372245fb2c" class="form2" method="post">
+            <form action="https://formspree.io/f/mjvnrrnz" class="form2" method="post">
                 <input type="email" name="name" placeholder="E-mail" class="email-of-bottom">
                 <button type="submit" class="subscribe-button">Subscribe</button>
             </form>
@@ -644,7 +654,7 @@
 
         <div class="CTA-links">
             <ul class="page-links">
-                <li><a href="#parent-naviagtion">Home</a></li>
+                <li><a href="#parent-navigation">Home</a></li>
                 <li><a href="#cards">Beats</a></li>
                 <li><a href="https://www.instagram.com/kafil_qurashie76/">Contact</a></li>
                 <li><a href="#myForm">Custom Beats</a></li>
@@ -703,9 +713,9 @@
         </div>
         <div class="hamburger-items">
             <ul>
-                <li>Home</li>
-                <li>Beats</li>
-                <li>Contact</li>
+                <li><a href="#cards" id="hamburgerwork">Beats</a></li>
+                <li><a href="https://www.instagram.com/kafil_qurashie76/" target="_blank">Contact</a></li>
+                <li><a href="#myForm" id="custombeatsorder">Custom Beats</a></li>
             </ul>
         </div>
     </div>
