@@ -75,7 +75,7 @@ body {
   justify-content: space-between;
   padding-bottom: 0px;
   height: 10%;
-  left: 70%;
+  left: 80%;
   bottom: 40px;
   margin-left: 20px;
 
@@ -85,7 +85,8 @@ body {
 }
 .icon-container .iconCart #Carticon{
    position:relative;
-   margin-left:100px;
+   margin-left:130px;
+   left: -30%;
 }
 #BEATS{
   scroll-behavior: smooth;
@@ -905,8 +906,12 @@ body {
   text-decoration: none;
   margin-right: 20px;
   color: white;
+  behavior: smooth;
 }
-
+body{
+  behavior: smooth;
+  scroll-behavior: smooth;
+}
 /*.social-account-container .social-accounts {
   width: 100%;
   display: flex;
@@ -1048,6 +1053,9 @@ body {
   color: #f7f7f7;
   text-decoration: underline;
 }
+.page-links li a{
+  color: white;
+}
 
 .Social-media-icons-fotter {
   color: white;
@@ -1140,10 +1148,7 @@ body {
 .CTA-links {
   height: 0px;
 }
-.CTA-links .page-links li a{
-  text-decoration: none;
-  color: white;
-}
+.CTA-links ul
 
 .logo-container {
   align-content: center;
@@ -1380,7 +1385,7 @@ font-family: var(--font--special)
   height: 100%;
   display: grid;
   grid-template-rows: 100px 10fr 50px;
-  overflow: hidden; 
+  /* overflow: hidden;  */
   background-color:#f7f7f7;
   color: black;
   top:0;
@@ -1392,6 +1397,7 @@ font-family: var(--font--special)
   gap: 10px;
   border-radius: 20px;
   overflow: auto;
+  z-index: 500;
 }
 .cart-of-page::-webkit-scrollbar{
   overflow: auto;
@@ -1494,19 +1500,28 @@ header img{
   font-family: var(--font--special);
   align-items: center;
   width: 60%;
-  margin-left: 30%;
-  display: none;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
  
   
 }
 .licenses-page div{
   align-items: center;
   background-color: black;
-  width: 30%;
+  width: 50%;
   color: #f7f7f7;
   text-align: center;
-  margin-left: 30%;
-  
+  margin-left:10%;
+  border: 2px solid #f7f7f7;
+  height: 100%;
+  border-radius: 10px; 
+}
+.licenses-page .wav-license{
+  z-index:-999;
 }
 .variants{
   display: flex;
@@ -1545,6 +1560,7 @@ header img{
   right: -80%;
   top: 5px;
   display:block;
+  cursor: pointer;
 }
  .hamburger-container{
  width: 100%;
@@ -1592,7 +1608,6 @@ header img{
   font-size: 35px;
   position: relative;
   top: -60px;
-   
   right: 10px;
   display: flex;
   justify-content: start;
@@ -1608,6 +1623,10 @@ header img{
  .hamburger-items ul{
   list-style-type: none;
  }
+ .hamburger-items ul li a{
+  text-decoration: none;
+  color:#000;
+}
  /*closed for dsktop view*/
  .iconCart-2{
   display: none;
@@ -1637,6 +1656,25 @@ header img{
   background-color: yellow;
   font-weight: bold;
 }
+.burger{
+  color: red;
+  margin-right:10px;
+  position: absolute;
+  left: -380%;
+  bottom: 10%;
+  display: none;
+
+}
+ .parent-navigation{
+  position: sticky;
+  z-index:50;
+  background-color: #000;
+  bottom: -10px;  
+  top: 0;
+}
+.cartWrapper{
+  z-index: 50;
+} 
 
 /*.navigation{
   position: sticky;
@@ -1646,12 +1684,49 @@ header img{
 /*PC DESIGN ABOVE*/
 /*RESPOSIVE DESIGN FOR MOBILES*/
 @media only screen and (max-width:608px){
+  .burger{
+    display: block;
+    color:white;
+    margin-right:10px;
+    position: absolute;
+    left: -490%;
+    bottom: 10%;
+  
+  }
+  .slogan1{
+    top: 55%;
+  }
+  .icon-container{
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    justify-content: space-between;
+    padding-bottom: 0px;
+    height: 10%;
+    left: 200%;
+    bottom: 40px;
+    margin-left: 20px;
+  
+  }
+  .cartWrapper{
+    z-index: 50;
+  }
+  .parent-navigation{
+    position: sticky;
+    background-color: #000;
+    bottom: -10px;  
+    z-index: 10;
+    top: 0; /* Adjust this value as needed */
+    border-radius: 21px;
+    width: 100%;
+  }
   .navigation img{
     margin-left: 40%;
     position: absolute;
     right: 60%;
     display: none;
     width: 10%;
+    border-radius: 21px;
   }
   .navigation ul li{
    display: none;
@@ -1705,8 +1780,9 @@ header img{
  }
  .main-image #slogan{
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 35%;
+  color:blue;
  }
  .main-image img{
   filter:opacity(0.5);
@@ -1783,6 +1859,8 @@ header img{
    top: 0px;
    bottom: 0px;
    row-gap: 0px;
+   padding-bottom: 35px;
+   
  }
 
 .solid-btn-1{
@@ -1972,6 +2050,9 @@ header img{
 }
 body{
   overflow-x: hidden !important;
+ }
 
 }
+body{
+  overflow-y: auto;
 }
